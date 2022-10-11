@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<title>SelfiBi Translator</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<!-- JQuery Links -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js'></script>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+
+	<link href="../css/default.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+	<script type="text/javascript"   src="../client.js"></script>
+	<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body >
+
+
+<!-- Selection Form -->
+
+<div class="row">
+	<div class="element1 col-md-8" ><h1><a href="JavaScript: location.reload(true);">WAR OF WORDS</a></h1></div>
+	<div   class="element2 col-md-3">
+		<form class="form">
+			<button type="button" name="button" value="button" id="button1" class="btn btn-info	 btn-lg waves-effect wave-light">Carica Lingue In SelfBi
+				<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+		</form>
+	</div>
+
+		<div   class="element2 col-md-1">
+			<form class="form" action="/logout" method="post">
+				<button type="submit" class="btn btn-primary btn-lg waves-effect wave-light ">LogOut
+					<span class="glyphicon glyphicon-off" aria-hidden="true"></span></button>
+			</form>
+		</div>
+
+
+
+
+</div>
+	<!-- Table Data -->
+
+	<section >
+		<div class="tbl-header">
+			<table   cellpadding="0" cellspacing="0" border="0" id="jsonTable1">
+
+			</table>
+		</div>
+
+		<div class="tbl-content">
+			<table  cellpadding="0" cellspacing="0" border="0" id="jsonTable">
+
+			</table>
+		</div>
+
+	</section>
+		<!-- Editing Form -->
+	</div>
+	<div id="bg" class="div  bg">
+<div class="container">
+					<div class="card">
+						<div class="card-body">
+
+
+								<div class="floating-box">
+									<h3 class="text-center default-text py-2 " style="color:#2BBBAD"><b>Translation-Form </b></h3>
+								</div>
+
+							<div  class="floating-box">
+							<select name="languages" id="languages"  class ="selectpicker input-lg btn-info  "  onchange="changeCurrentLanguage(event.target.value)" >
+								<option value=""> Select Language </option>
+							</select>
+							</div>
+				<!--			<div   class="floating-box">
+								<form class="form" >
+									<button type="button" class="btn btn-primary btn-lg waves-effect wave-light  " id="button2" onclick="reloadTableFiltered()">Visualizza Elementi Mancanti
+										<span class="glyphicon glyphicon-sort" aria-hidden="true"></span></button>
+
+								</form>
+							</div>
+							-->
+							<div class="floating-box">
+								<label class="switch">
+									<input type="checkbox" id="filtering" onclick="FilterTableDataBasedUponCurrentLanguage() ">
+									<div class="slider"></div>
+									</label>
+								<label id="ll">Filters Are Off</label>
+							</div>
+
+
+
+							<div class="md-form">
+								<i class= "prefix grey-text"></i>
+								<form   action="/" id="formUpdate">
+									<input type="text" class="form-control" name="key" placeholder="Key" id="key"  style="color:#ff3547; font-size: large "  readonly >
+       	    						<input type="text" class="form-control" name="base" placeholder="Base"   id="base"  style="color:#ff3547; font-size: large" readonly>
+									<input type="hidden" class="form-control" name="language"   id="language" >
+									<input type="text"  class="form-control" name="translation" placeholder="Translation" id="translation"  style="color:#06D85F; font-size: x-large">
+									<div class="text-center" >
+										<div>
+											<button type="submit" name="submit" value="submit" class="btn btn-default btn-lg waves-effect wave-light " >Salva
+                                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+											<button type="reset" name="reset" value="reset" class="btn btn-danger btn-lg waves-effect wave-light ">Clear
+												<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+										</div>
+									</div>
+								</form>
+								</div>
+							</div>
+						</div>
+
+	<div id="snackbar" class="snackbar">Translation Data Has Been Updated</div>
+	<div id="snackbar0" class="snackbar0">Translation Data Not Updated  // Select the Table Row  //  Available Language  </div>
+	<div id="snackbar1" class="snackbar1">Translation CheckBox Updated</div>
+	<div id="snackbar2" class="snackbar2">Translation CheckBox Not Updated</div>
+
+	<div id="snackbar3" class="snackbar3">Server Not Responding , Try After some Time....</div>
+	<div id="snackbar4" class="snackbar4">Server Not Responding , Try After some Time....</div>
+
+	<div id="snackbar5" class="snackbar5">Language Files Can Be Added</div>
+	<div id="snackbar6" class="snackbar6">Language Files Not Added// Present This Service Not Available //Server Not Responding</div>
+
+
+	<div id="wait" style="display:none;width:89px;height:100px;  ;position:absolute;top:35%;left:50%;padding:0px;">
+		<img src='../loading5.gif' width="100" height="100" /></div>
+
+
+
+
+
+</div>
+</div>
+
+
+
+</body>
+</html>

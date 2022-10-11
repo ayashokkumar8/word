@@ -1,0 +1,36 @@
+[
+	{
+		"id": "description",
+		"name": "Description"
+	},
+	{
+		"id": "it_it",
+		"name": "Italiano - Italia",
+		"isReady": true,
+		"hasKeyFlag": true
+	},
+	{
+		"id": "en_us",
+		"name": "English - US",
+		"isReady": true,
+		"hasKeyFlag": true
+	},
+	{
+		"id": "es_es",
+		"name": "Españo - Spagna",
+		"isReady": true,
+		"hasKeyFlag": true
+	},
+	{
+		"id": "fr_fr",
+		"name": "Français - France",
+		"isReady": true,
+		"hasKeyFlag": true
+	},
+	{
+		"id": "en_uk",
+		"name": "English - UK",
+		"isReady":false,
+		"hasKeyFlag":false
+	}
+]

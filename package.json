@@ -1,0 +1,43 @@
+{
+  "name": "node_express_tut",
+  "version": "0.0.0",
+  "description": "this",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
+    "connect": "^3.6.5",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "epress": "0.0.1-security",
+    "express": "^4.16.2",
+    "express-generator": "^4.15.5",
+    "express-handlebars": "^3.0.0",
+    "fs": "0.0.1-security",
+    "hbs": "^4.0.1",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "ini": "^1.3.5",
+    "json-socket": "^0.3.0",
+    "lodash": "^4.17.5",
+    "modules": "^0.4.0",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.0.2",
+    "mongodb-schema": "^8.0.0",
+    "mongoose": "^5.0.4",
+    "router": "^1.3.2",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "as",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "no"
+  }
+}

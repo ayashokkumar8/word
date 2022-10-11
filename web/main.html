@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta charset="UTF-8" />
+	<title>SelfiBi Translator</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+	<!-- JQuery Links -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js'></script>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+	<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+
+	<link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+
+
+<div class="wrapper">
+         <div  class="container" style="text-align: center;">
+		    	<div id="child1">
+			    	<h1><a href="#" style="color: white">War Of Words</a></h1>
+			    </div>
+
+			    <div class="container child1">
+				   <select name="languages" id="languages"  class ="selectpicker input-lg btn-info  "  onchange="updateTranslationField(event.target.value)" >
+					 <option value=""> Select Language </option>
+				   </select>
+			       <br/><br/>
+			   </div>
+
+	<!-- Selection Form -->
+
+
+	<!-- Table Data -->
+
+
+	<div class="child2" id="child2">
+		<div class="card">
+			<h3 class="text-center default-text py-2  " style=" font-size: x-large;  color: #1ABC9C">Translation-Table</h3>
+		</div>
+		<div class="row">
+				<div class="col-md-12" >
+			   	<form >
+			 	<table  class="table  table-hover table-fixed-header"  style="overflow: auto;"   id="jsonTable" > </table>
+      			</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Editing Form -->
+
+<div class="child3">
+			<div class="row">
+				<div class="col-md">
+					<div class="card">
+						<div class="card-body">
+							<h3 class="text-center default-text py-2 " style="color:#2BBBAD">Translation-Form </h3>
+							<div class="md-form">
+								<i class= "prefix grey-text"></i>
+								<form method="post" onclick="updateForm()" action="/updateFormData">
+								<input type="text" class="form-control" name="key" placeholder="Key" id="key">
+								<input type="text" class="form-control" name="base" placeholder="Base"   id="base">
+								<input type="text" class="form-control" name="translation" placeholder="Translation" id="translation">
+									<div class="text-center">
+									<button type="submit" class="btn btn-default btn-lg waves-effect wave-light " id="submitFormData">Submit</button>
+									<button type="Clear" class="btn btn-default btn-lg waves-effect wave-light">Clear</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+  </div>
+</div>
+</div>
+
+<!--</div>
+	<div id="copyright" class="container">
+		<p>&copy; CopyRight 2018. All rights reserved. | Design by <a href="http://www.intesanet.it" rel="nofollow">IntesaNet.Srl</a>.</p>
+			<ul class="contact">
+				<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+				<li><a href="#" class="icon icon-facebook"><span></span></a></li>
+				<li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+				<li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+				<li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+			</ul>
+	</div>
+-->
+
+<script>
+
+var translate_data;
+    var language_list;
+    var current_row_index = -1;
+    var currentLanguage = 'it_it';
+
+
+    // Selection Box and Table Data inserting
+
+    function addAllColumnHeaders() {
+		var columnSet = [];
+        var headerTr$ = $('<tr/>');
+
+        columnSet.push('key');
+        headerTr$.append($('<th/>').html('key'));
+
+        columnSet.push('base');
+        headerTr$.append($('<th/>').html('base'));
+
+        this.language_list.forEach(function (lang) {
+            columnSet.push(lang.id);
+            headerTr$.append($('<th/>').html(lang.id));
+        });
+
+        $("#jsonTable").append(headerTr$);
+
+        return columnSet;
+    }
+
+    function addTable () {
+        var columns = addAllColumnHeaders(),
+            data = translate_data.languages;
+
+
+        for (var i = 0; i < data.length; i++) {
+            var row$ = $('<tr/>');
+            for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+                var cellValue = data[i][columns[colIndex]];
+
+                if (cellValue == null) { cellValue = ""; }
+
+                row$.append($('<td/>').html(cellValue));
+            }
+            row$.attr("id",i);
+
+            $("#jsonTable").append(row$);
+        }
+    }
+
+
+    function fillLanguageList(id) {
+        var language_data='';
+        $.each(language_list , function(key , value){
+            language_data += '<option value="'+value.id+'">'+value.name+'</option>';
+        });
+        $('#languages').html(language_data);
+    }
+
+// Getting Form Elements
+    function updateForm() {
+        console.log(current_row_index);
+        var rec = translate_data.languages[current_row_index];
+        console.log(rec);
+        var key = document.getElementById('key');
+        var base = document.getElementById('base');
+        var translation = document.getElementById('translation');
+
+        key.value = rec['key'];
+        base.value = rec['base'];
+        if (currentLanguage) {
+            translation.value= rec[currentLanguage];
+		}
+    }
+// Row Selection and Highlighting
+    function highlight(e){
+        if(selected[0])selected[0].className='';
+        e.target.parentNode.className='selected';
+        if (e.target.parentNode) {
+            current_row_index = e.target.parentNode.rowIndex-1;
+            updateForm();
+		}
+    }
+    var table = document.getElementById('jsonTable'),
+        selected = table.getElementsByClassName('selected');
+    var highlighted = table.onclick = highlight;
+
+    function addClass(element,className) {
+        var currentClassName = element.getAttribute("class");
+        if (typeof currentClassName!== "undefined" && currentClassName) {
+            element.setAttribute("class",currentClassName + " "+ className);
+        }
+        else {
+            element.setAttribute("class",className);
+        }
+    }
+    function removeClass(element,className) {
+        var currentClassName = element.getAttribute("class");
+        if (typeof currentClassName!== "undefined" && currentClassName) {
+
+            var class2RemoveIndex = currentClassName.indexOf(className);
+            var class2Remove = currentClassName.substr(class2RemoveIndex, className.length);
+
+            var updatedClassName = currentClassName.replace(class2Remove,"").trim();
+
+            element.setAttribute("class",updatedClassName);
+        }
+        else {
+            element.removeAttribute("class");
+        }
+    }
+
+function changeHighlight(e){
+    var unSelected =table.getElementsByClassName('selected');
+
+    if(unSelected.length) {
+        removeClass(unSelected[0], 'selected');
+	};
+
+    if (current_row_index > -1) {
+        var toSelect = document.getElementById(current_row_index);
+        addClass(toSelect,'selected');
+	}
+}
+
+table.onclick = function(e) {
+	if (e.target.parentNode) {
+		current_row_index = e.target.parentNode.rowIndex-1;
+		updateForm();
+        changeHighlight();
+	}
+};
+
+
+
+// Table KeyBoard Events
+function checkKey(e) {
+    console.log('checkKey', e);
+
+    if (e.key == 'ArrowDown') {
+        ++current_row_index;
+        changeHighlight();
+        updateForm();
+    }
+    else if (e.key == 'ArrowUp') {
+        --current_row_index;
+        changeHighlight();
+        updateForm();
+        // down arrow
+    }
+    else if (e.keyCode == '37') {
+        // left arrow
+    }
+    else if (e.keyCode == '39') {
+        // right arrow
+    }
+}
+
+
+
+
+
+
+// Table Update
+    function updateTranslationField(newLang) {
+        console.log("updateTranslationField()", newLang);
+        currentLanguage = newLang;
+        updateForm();
+    }
+
+
+
+
+
+
+    //Getting Json File from Server
+    document.addEventListener("DOMContentLoaded", function() {
+        $.getJSON("/languages", function (data) {
+            language_list = data;
+
+            $.getJSON('/jsonTable', function (tableData) {
+                translate_data = tableData;
+                fillLanguageList();
+                addTable();
+            });
+        });
+    });
+
+// Table Scroll Bar
+    $(document).ready(function(){
+        console.log('documenmt.ready');
+        document.body.addEventListener('keydown',  checkKey, false);
+
+        var row =$('table#jsonTable >tbody >tr:first');
+        for(i=0 ; i<0; i++){
+            $('table#jsonTable >tbody').append(row.clone());
+        }
+        $('.table-fixed-header').prepFixedHeader().fixedHeader();
+    });
+
+
+
+    (function($) {
+
+        $.fn.prepFixedHeader = function () {
+            return this.each( function() {
+                $(this).wrap('<div class="row fixed-table"><div class="table-content"></div></div>');
+            });
+        };
+
+        $.fn.fixedHeader = function () {
+            return this.each( function() {
+                var o = $(this),
+                    nhead = o.closest('.fixed-table'),
+                    $head = $('thead.header', o);
+
+                $(document.createElement('table'))
+                    .addClass(o.attr('class')+' table-copy').removeClass('table-fixed-header')
+                    .appendTo(nhead)
+                    .html($head.clone().removeClass('header').addClass('header-copy header-fixed'));
+                var ww = [];
+                o.find('thead.header > tr:first > th').each(function (i, h){
+                    ww.push($(h).width());
+                });
+                $.each(ww, function (i, w){
+                    nhead.find('thead.header > tr > th:eq('+i+'), thead.header-copy > tr > th:eq('+i+')').css({width: w});
+                });
+
+                nhead.find('thead.header-copy').css({ margin:'0 auto',
+                    width: o.width()});
+            });
+        };
+
+    })(jQuery);
+
+
+</script>
+</body>
+</html>

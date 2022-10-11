@@ -1,0 +1,6 @@
+[
+		{"id" : "en-us",	"name" : "English - US"},
+		{"id" : "it-it",	"name" : "Italiano - Italia"},
+		{"id" : "es-es",	"name" : "Espa�ol - Spagna"},
+		{"id" : "fr-fr",	"name" : "Fran�ais - France"}
+	]

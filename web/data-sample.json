@@ -1,0 +1,25 @@
+{
+  "languages": [
+    {
+      "key": "version",
+      "base": "Version",
+      "it_it": "versione",
+      "fr_fr": null,
+      "es_es": null,
+      "en_us": "version"
+    },
+    {
+      "key": "loading",
+      "base": "Loading...",
+      "it_it": "Caricando...",
+      "fr_fr": null,
+      "es_es": null,
+      "en_us": "Loading..."
+    }
+  ]
+}
+
+
+
+
+
